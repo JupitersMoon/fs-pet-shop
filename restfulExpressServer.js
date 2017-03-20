@@ -45,9 +45,9 @@ app.post('/pets', (req, res) => {
     res.sendStatus(400)
   } else {
     let newPet = {
-      "name": name,
-      "age": age,
-      "kind": kind
+      'name': name,
+      'age': age,
+      'kind': kind
     }
     fs.readFile(petsPath, 'utf8', (err, petsJSON) => {
       if (err) {
@@ -62,7 +62,7 @@ app.post('/pets', (req, res) => {
         res.send((req.body))
       })
     })
-    console.log('reqbody final', (req.body), typeof req.body);
+    // console.log('reqbody final', (req.body), typeof req.body);
   }
 })
 app.patch('/pets/:id', (req, res) => {
@@ -107,11 +107,11 @@ app.delete('/pets/:id', (req, res) => {
     })
   })
 })
-app.use(function(req, res) {
+app.use((req, res) => {
   res.sendStatus(404);
 });
 
-app.listen(port, function() {
+app.listen(port, () => {
   console.log('Listening on port', port);
 });
 

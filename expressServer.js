@@ -10,7 +10,7 @@ fs.readFile(petsPath, 'utf8', (err, petsData) => {
   let parsedPets = JSON.parse(petsData)
   app.get('/pets', (req, res) => {
 
-  // console.log("IN IT /pets");
+  // console.log('IN IT /pets');
   res.send(parsedPets);
   })
   app.get('/pets/:id', (req, res) => {
