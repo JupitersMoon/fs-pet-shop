@@ -15,8 +15,8 @@ fs.readFile(petsPath, 'utf8', (err, petsData) => {
   })
   app.get('/pets/:id', (req, res) => {
     let id = req.params.id
-    // console.log(id);
-    // console.log(req.params.id);
+    console.log(id);
+    console.log(req.params.id);
     if(!isNaN(id) && id >= 0 && id < parsedPets.length) {
       res.send(parsedPets[id])
     }
@@ -27,6 +27,6 @@ fs.readFile(petsPath, 'utf8', (err, petsData) => {
     }
   })
 })
-// app.listen(8000)
+app.listen(8000)
 
 module.exports = app

@@ -9,12 +9,12 @@ const server = http.createServer((req, res) => {
   fs.readFile('./pets.json', 'utf8', (err, data) => {
     // console.log(req.url);
     if (err) throw err;
-    let pathName = url.parse(req.url).pathname; // '/pets/1'
+    let pathName = url.parse(req.url).pathname;
     let method = req.method;
     let body = req.body;
     // console.log(req);
     // console.log(body);
-    let pathArr = pathName.match(/[^/]+/g); // ['pets', '1']
+    let pathArr = pathName.match(/[^/]+/g); 
     if (method === 'GET') {
       if (!pathArr) {
         res.statusCode = 404;
